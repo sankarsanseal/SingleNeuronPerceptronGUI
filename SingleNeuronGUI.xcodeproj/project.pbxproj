@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6A1766031D7D42F6007ECCCC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A1766021D7D42F6007ECCCC /* main.cpp */; };
+		6A17660A1D7D43DB007ECCCC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A1766091D7D43DB007ECCCC /* Cocoa.framework */; };
+		6A17660C1D7D43F4007ECCCC /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A17660B1D7D43F4007ECCCC /* GLUT.framework */; };
+		6A17660E1D7D4407007ECCCC /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A17660D1D7D4407007ECCCC /* OpenGL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,10 @@
 /* Begin PBXFileReference section */
 		6A1765FF1D7D42F6007ECCCC /* SingleNeuronGUI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SingleNeuronGUI; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A1766021D7D42F6007ECCCC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6A1766091D7D43DB007ECCCC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		6A17660B1D7D43F4007ECCCC /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		6A17660D1D7D4407007ECCCC /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		6A17660F1D7D44C1007ECCCC /* nnstruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nnstruct.h; path = ../../SingleNeuronPerceptron/SingleNeuronPerceptron/nnstruct.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +39,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A17660E1D7D4407007ECCCC /* OpenGL.framework in Frameworks */,
+				6A17660C1D7D43F4007ECCCC /* GLUT.framework in Frameworks */,
+				6A17660A1D7D43DB007ECCCC /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +51,9 @@
 		6A1765F61D7D42F6007ECCCC = {
 			isa = PBXGroup;
 			children = (
+				6A17660D1D7D4407007ECCCC /* OpenGL.framework */,
+				6A17660B1D7D43F4007ECCCC /* GLUT.framework */,
+				6A1766091D7D43DB007ECCCC /* Cocoa.framework */,
 				6A1766011D7D42F6007ECCCC /* SingleNeuronGUI */,
 				6A1766001D7D42F6007ECCCC /* Products */,
 			);
@@ -58,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				6A1766021D7D42F6007ECCCC /* main.cpp */,
+				6A17660F1D7D44C1007ECCCC /* nnstruct.h */,
 			);
 			path = SingleNeuronGUI;
 			sourceTree = "<group>";
@@ -209,6 +223,11 @@
 		6A1766071D7D42F6007ECCCC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_CFLAGS = "-Wno-deprecated";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-Wno-deprecated",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -216,6 +235,11 @@
 		6A1766081D7D42F6007ECCCC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_CFLAGS = "-Wno-deprecated";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-Wno-deprecated",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -239,6 +263,7 @@
 				6A1766081D7D42F6007ECCCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
