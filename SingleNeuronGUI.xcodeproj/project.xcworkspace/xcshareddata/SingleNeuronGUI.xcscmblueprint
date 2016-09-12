@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "06F32162EB646FDDFC4D0AFE3910E447840118C2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "06F32162EB646FDDFC4D0AFE3910E447840118C2" : 0,
+    "43E34D4860D5EFCF6671124DAC5CE22C4BC1E380" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3B2F0BBC-F289-41AF-88E4-A4AAB3EB8C38",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "06F32162EB646FDDFC4D0AFE3910E447840118C2" : "SingleNeuronGUI\/",
+    "43E34D4860D5EFCF6671124DAC5CE22C4BC1E380" : "SingleNeuronPerceptron\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SingleNeuronGUI",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SingleNeuronGUI.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sankarsanseal\/SingleNeuronPerceptronGUI.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "06F32162EB646FDDFC4D0AFE3910E447840118C2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sankarsanseal\/SingleNeuronPerceptron.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "43E34D4860D5EFCF6671124DAC5CE22C4BC1E380"
+    }
+  ]
+}
