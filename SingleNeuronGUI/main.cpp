@@ -21,6 +21,7 @@ using namespace std;
 #include "nnstruct.h"
 #include <unistd.h>
 #include <time.h>
+#include <random>
 
 #define NENDS 2           /* number of end "points" to draw */
 
@@ -201,14 +202,70 @@ main(int argc, char *argv[])
     
     
     int i, j;
+    double label;
+    double mean11,mean12,mean21,mean22;
+    double sd11, sd12,sd21,sd22;
     fprintf(stdout, "Enter the number of points:");
     fscanf(stdin, "%d", &n);
+    fprintf(stdout,"Enter the mean  feature x1 of class1:");
+    fscanf(stdin,"%lf",&mean11);
+    fprintf(stdout,"Enter the mean  feature x2 of class1:");
+    fscanf(stdin,"%lf",&mean12);
+    fprintf(stdout,"Enter the sd of x1 of class1:");
+    fscanf(stdin,"%lf",&sd11);
+    
+    fprintf(stdout,"Enter the sd of x2 of class1:");
+    fscanf(stdin,"%lf",&sd12);
+    
+    fprintf(stdout,"Enter the mean  feature x1 of class2:");
+    fscanf(stdin,"%lf",&mean21);
+    fprintf(stdout,"Enter the mean  feature x2 of class2:");
+    fscanf(stdin,"%lf",&mean22);
+    fprintf(stdout,"Enter the sd of x1 of class2:");
+    fscanf(stdin,"%lf",&sd21);
+    
+    fprintf(stdout,"Enter the sd of x2 of class2:");
+    fscanf(stdin,"%lf",&sd22);
     
     pc = (twoDem *) malloc(sizeof(twoDem) * n);
     
+    default_random_engine generator;
+    normal_distribution<double> distribution1(0.0,1.0);
+    normal_distribution<double> distribution2(mean11,sd11);
+    normal_distribution<double> distribution3(mean12,sd12);
+    normal_distribution<double> distribution4(mean21,sd21);
+    normal_distribution<double> distribution5(mean22,sd22);
+    
     for (i = 0; i < n; i++)
     {
-        fprintf(stdout,"Enter details of pattern %d:\n",i+1);
+        
+        label=distribution1(generator);
+        
+        if(label<0.0)
+            pc[i].ylabel=-1;
+        else
+            pc[i].ylabel=1;
+        
+        pc[i].x[0] = 1;
+        
+        if(pc[i].ylabel==1)
+        {
+            pc[i].x[1]=(int)distribution2(generator);
+            pc[i].x[1]/=width;
+            pc[i].x[2]=(int)distribution4(generator);
+            pc[i].x[2]/=height;
+        }
+        
+        else if(pc[i].ylabel==-1)
+        {
+            pc[i].x[1]=(int)distribution3(generator);
+            pc[i].x[1]/=width;
+            pc[i].x[2]=(int)distribution5(generator);
+            pc[i].x[2]/=height;
+        }
+        
+
+       /* fprintf(stdout,"Enter details of pattern %d:\n",i+1);
         pc[i].x[0] = 1;
         for (j = 1; j < NO_OF_PARAMETER; j++)
         {
@@ -221,7 +278,7 @@ main(int argc, char *argv[])
                 pc[i].x[j]/=height;
         }
         fprintf(stdout,"Enter the target label:");
-        fscanf(stdin,"%d%*c",&(pc[i].ylabel));
+        fscanf(stdin,"%d%*c",&(pc[i].ylabel));*/
     }
     
     srand((unsigned int)time(NULL));
